@@ -1,0 +1,174 @@
+.product-form {
+    width: 20rem;
+    max-width: 90%;
+    margin: auto;
+    display: block;
+}
+
+.product-item {
+    width: 20rem;
+    max-width: 95%;
+    margin: 1rem;
+}
+
+.product__title {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.product__price {
+    text-align: center;
+    color: #4d4d4d;
+    margin-bottom: 0.5rem;
+}
+
+.product__description {
+    text-align: center;
+}
+
+.about-section ul {
+    list-style: none;
+    margin-left: 30px;
+    padding-left: 0;
+}
+
+.about-section li {
+    line-height: 2em;
+}
+
+.about-section a {
+    color: blue;
+}
+
+.about-section {
+    background-color: #f7f9fa;
+}
+
+.foot ul {
+    list-style: none;
+    margin-left: 2px !important;
+    padding-left: 2px;
+}
+
+.foot li {
+    line-height: 1.5em;
+}
+
+.foot a {
+    color: rgb(0, 0, 0) !important;
+    text-decoration: none;
+}
+
+.foot a:hover {
+    text-decoration: underline;
+}
+
+.foot {
+    background-color: #f7f9fa;
+    width: 100% !important;
+}
+
+.btn1 {
+    background-color: white !important;
+    padding: 14px 20px !important;
+    margin: 8px 0 !important;
+    border: 1px solid black !important;
+    cursor: pointer !important;
+    width: 15% !important;
+    color: black !important;
+    font-weight: bold !important;
+}
+
+.btn1:hover {
+    background-color: black !important;
+    color: white !important;
+}
+
+.btn2 {
+    background-color: black !important;
+    padding: 14px 20px !important;
+    margin: 8px 0 !important;
+    border: 1px solid black !important;
+    cursor: pointer !important;
+    width: 70% !important;
+    height: 15% !important;
+    color: white !important;
+    font-weight: bold !important;
+}
+
+.btn2:hover {
+    background-color: white!important;
+    color: black !important;
+}
+
+.btn3 {
+    background-color: black !important;
+    padding: 14px 20px !important;
+    margin: 8px 0 !important;
+    border: 1px solid white !important;
+    cursor: pointer !important;
+    width: 10% !important;
+    height: 15% !important;
+    color: white !important;
+    font-weight: bold !important;
+    margin-left: 85% !important;
+    margin-bottom: 0.5% !important;
+}
+
+.card-img {
+    margin-left: 55%;
+}
+
+.card-img:hover {
+    transform: scale(0.9);
+    transition: transform .3s;
+}
+
+.div-content {
+    margin-top: 5%;
+    margin-right: 10%;
+}
+
+@media only screen and (max-width: 425px) {
+    .btn1 {
+        background-color: white !important;
+        padding: 14px 20px !important;
+        margin: 8px 0 !important;
+        border: 1px solid black !important;
+        cursor: pointer !important;
+        width: 50% !important;
+        color: black !important;
+        font-weight: bold !important;
+    }
+    .btn2 {
+        background-color: black !important;
+        padding: 14px 20px !important;
+        margin: 8px 0 !important;
+        border: 1px solid black !important;
+        cursor: pointer !important;
+        width: 55% !important;
+        height: 23% !important;
+        color: white !important;
+        font-weight: bold !important;
+    }
+    .btn3 {
+        background-color: black !important;
+        padding: 14px 20px !important;
+        margin: 8px 0 !important;
+        border: 1px solid white !important;
+        cursor: pointer !important;
+        width: 50% !important;
+        height: 20% !important;
+        color: white !important;
+        font-weight: bold !important;
+    }
+    .card-img {
+        position: relative;
+        right: 40%;
+        width: 40%;
+    }
+    .card-img:hover {
+        transform: scale(1.1);
+        transition: transform .3s;
+    }
+}

@@ -1,0 +1,131 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/product.css">
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+            <main>
+                <% if (prods.length > 0) { %>
+                    <h1>&nbsp;&nbsp;&nbsp;&nbsp;Students is viewing</h1>
+                    <div class="grid">
+                        <% for (let product of prods) { %>
+                            <article class="card product-item">
+                                <header class="card__header">
+                                    <h1 class="product__title">
+                                        <%= product.title %>
+                                    </h1>
+                                </header>
+                                <div class="card__image">
+                                    <img src="/<%= product.imageUrl %>" alt="<%= product.title %>">
+                                </div>
+                                <div class="card__content">
+                                    <h2 class="product__price">₹&nbsp;&nbsp;
+                                        <%= product.price %>
+                                    </h2>
+                                    <p class="product__description">
+                                        <%= product.description %>
+                                    </p>
+                                </div>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <div class="card__actions">
+                                    <% if (!isAuthenticated || isAdmin) { %>
+                                        <a href="/courses/<%= product._id %>" class="btn">Details</a>
+                                        <% } else { %>
+                                            <a href="/courses/<%= product._id %>" class="btn">Details</a>
+                                            <%- include('../includes/add-to-cart.ejs', {product: product}) %>
+                                                <% } %>
+
+                                </div>
+                            </article>
+                            <% } %>
+                    </div>
+                    <%- include('../includes/pagination.ejs', {currentPage: currentPage, nextPage: nextPage, previousPage: previousPage, lastPage: lastPage, hasNextPage: hasNextPage, hasPreviousPage: hasPreviousPage}) %>
+                        <h1>&nbsp;&nbsp;&nbsp;&nbsp;Top categories</h1>
+                        <%- include('../includes/catogery.ejs') %>
+                            <div class="about-section" id="about-section">
+                                &nbsp;
+                                <h1>&nbsp;&nbsp;&nbsp;&nbsp;Featured topics by category</h1>
+                                <ul class="r-footer" id="r-footer">
+                                    <li class="Development">
+                                        <h2 style="color:black">
+                                            Development</h2>
+                                        <ul class="box">
+                                            <li><a href="#"> &nbsp;Python</a><br/>33,534,795 students</li>
+                                            <li><a href="#"> &nbsp;Web Development</a><br/>10,584,115 students</li>
+                                            <li><a href="#"> &nbsp;Machine Learning</a><br/>6,617,379 students</li>
+                                        </ul>
+                                    </li>
+                                    <li class="Business">
+                                        <h2 style="color:black">
+                                            Business</h2>
+                                        <ul class="box ">
+                                            <li><a href="#"> &nbsp;Financial Analysis</a><br/>1,139,805 students</li>
+                                            <li><a href="#"> &nbsp;SQL</a><br/>5,272,334 students</li>
+                                            <li><a href="#"> &nbsp;PMP</a><br/>1,574,149 students</li>
+                                        </ul>
+                                    </li>
+                                    <li class="It">
+                                        <h2 style="color:black">
+                                            IT and Software</h2>
+                                        <ul class="box ">
+                                            <li><a href="#"> &nbsp;AWS Certification</a><br/>5,226,794 students</li>
+                                            <li><a href="#"> &nbsp;Ethical Hacking</a><br/>10,258,602 students</li>
+                                            <li><a href="#"> &nbsp;Cyber Security</a><br/>3,705,348 students</li>
+                                        </ul>
+                                    </li>
+                                    <li class="Design">
+                                        <h2 style="color:black">
+                                            Design</h2>
+                                        <ul class="box ">
+                                            <li><a href="#"> &nbsp;Photoshop</a><br/>10,444,224 students</li>
+                                            <li><a href="#"> &nbsp;Graphic Design</a><br/>3,149,605 students</li>
+                                            <li><a href="#"> &nbsp;Drawing</a><br/>2,334,420 students</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn1">Explore More topics</button>&nbsp;&nbsp;
+                            </div>
+                            <br>
+                            <hr>
+                            <section>
+                                <div class="grid">
+                                    <div>
+                                        <img src="https://s.udemycdn.com/home/non-student-cta/instructor-1x-v3.jpg" class="card-img">
+                                    </div>
+                                    <div class="div-content">
+                                        <h1>Become an instructor</h1>
+                                        <p>Instructors from around the world teach<br/>millions of students on Udemy. We provide the<br/>tools and skills to teach what you love.</p>
+                                        <button class="btn2">Start teaching today</button>
+                                    </div>
+                                </div>
+                            </section>
+                            <br/>
+                            <section>
+                                <div class="grid">
+                                    <div>
+                                        <img src="https://s.udemycdn.com/home/non-student-cta/transform-1x-v3.jpg" class="card-img">
+                                    </div>
+                                    <div class="div-content">
+                                        <h1>Transform your life through education</h1>
+                                        <p>Learners around the world are launching new<br/>careers, advancing in their fields, and enriching<br/>their lives.</p>
+                                        <button class="btn2">Find Out How</button>
+                                    </div>
+                                </div>
+                            </section>
+                            <br>
+                            <hr>
+                            <br/>
+                            <%- include('../includes/footer.ejs') %>
+                                <h6 style="text-align:center">Designed By Pravin Kumar</h6>
+
+                                <% } else { %>
+                                    <div class="no">
+                                        <h1>No Courses Found!</h1>
+                                    </div>
+                                    <% } %>
+            </main>
+
+            <%- include('../includes/end.ejs') %>
